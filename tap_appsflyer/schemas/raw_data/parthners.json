@@ -1,0 +1,540 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "array",
+  "title": "The Root Schema",
+  "items": {
+    "$id": "#/items",
+    "type": "object",
+    "title": "The Items Schema",
+    "required": [
+        "agency_pmd_af_prt",
+        "media_source_pid",
+        "campaign",
+        "impressions",
+        "clicks",
+        "ctr",
+        "installs",
+        "conversion_rate",
+        "sessions",
+        "loyal_users",
+        "loyal_users_Installs",
+        "total_revenue",
+        "total_cost",
+        "roi",
+        "arpu",
+        "average_ecpi",
+        "af_content_view_unique_users",
+        "af_content_view_event_counter",
+        "af_content_view_sales_in_usd",
+        "app_confirmed_sms_unique_users",
+        "app_confirmed_sms_event_counter",
+        "app_confirmed_sms_sales_in_usd",
+        "app_facial_image_unique_users",
+        "app_facial_image_event_counter",
+        "app_facial_image_sales_in_usd",
+        "app_loginpage_unique_users",
+        "app_loginpage_event_counter",
+        "app_loginpage_sales_in_usd",
+        "app_onboard_success_unique_users",
+        "app_onboard_success_event_counter",
+        "app_onboard_success_sales_in_usd",
+        "app_open_unique_users",
+        "app_open_event_counter",
+        "app_open_sales_in_usd",
+        "app_passcode_1_unique_users",
+        "app_passcode_1_event_counter",
+        "app_passcode_1_sales_in_usd",
+        "app_passcode_2_unique_users",
+        "app_passcode_2_event_counter",
+        "app_passcode_2_sales_in_usd",
+        "app_phone_number_add_unique_users",
+        "app_phone_number_add_event_counter",
+        "app_phone_number_add_sales_in_usd",
+        "app_registered_success_unique_users",
+        "app_registered_success_event_counter",
+        "app_registered_success_sales_in_usd",
+        "app_waiting_sms_code_unique_users",
+        "app_waiting_sms_code_event_counter",
+        "app_waiting_sms_code_sales_in_usd",
+        "emotion_validation_unique_users",
+        "emotion_validation_event_counter",
+        "emotion_validation_sales_in_usd"
+    ],
+    "properties": {
+      "Agency/PMD (af_prt)": {
+        "$id": "#/items/properties/Agency/PMD (af_prt)",
+        "type": "string",
+        "title": "The Agency/pmd (af_prt) Schema",
+        "default": "",
+        "examples": [
+          "None"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "Media Source (pid)": {
+        "$id": "#/items/properties/Media Source (pid)",
+        "type": "string",
+        "title": "The Media source (pid) Schema",
+        "default": "",
+        "examples": [
+          "Facebook Ads"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "Campaign (c)": {
+        "$id": "#/items/properties/Campaign (c)",
+        "type": "string",
+        "title": "The Campaign (c) Schema",
+        "default": "",
+        "examples": [
+          "[IG]-app-promotion-UG-ZW-RW-SN-TZ"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "Impressions": {
+        "$id": "#/items/properties/Impressions",
+        "type": "integer",
+        "title": "The Impressions Schema",
+        "default": 0,
+        "examples": [
+          2171
+        ]
+      },
+      "Clicks": {
+        "$id": "#/items/properties/Clicks",
+        "type": "integer",
+        "title": "The Clicks Schema",
+        "default": 0,
+        "examples": [
+          5
+        ]
+      },
+      "CTR": {
+        "$id": "#/items/properties/CTR",
+        "type": "number",
+        "title": "The Ctr Schema",
+        "default": 0.0,
+        "examples": [
+          0.0023
+        ]
+      },
+      "Installs": {
+        "$id": "#/items/properties/Installs",
+        "type": "integer",
+        "title": "The Installs Schema",
+        "default": 0,
+        "examples": [
+          2
+        ]
+      },
+      "Conversion Rate": {
+        "$id": "#/items/properties/Conversion Rate",
+        "type": "number",
+        "title": "The Conversion rate Schema",
+        "default": 0.0,
+        "examples": [
+          0.4
+        ]
+      },
+      "Sessions": {
+        "$id": "#/items/properties/Sessions",
+        "type": "integer",
+        "title": "The Sessions Schema",
+        "default": 0,
+        "examples": [
+          41
+        ]
+      },
+      "Loyal Users": {
+        "$id": "#/items/properties/Loyal Users",
+        "type": "integer",
+        "title": "The Loyal users Schema",
+        "default": 0,
+        "examples": [
+          2
+        ]
+      },
+      "Loyal Users/Installs": {
+        "$id": "#/items/properties/Loyal Users/Installs",
+        "type": "integer",
+        "title": "The Loyal users/installs Schema",
+        "default": 0,
+        "examples": [
+          1
+        ]
+      },
+      "Total Revenue": {
+        "$id": "#/items/properties/Total Revenue",
+        "type": "integer",
+        "title": "The Total revenue Schema",
+        "default": 0,
+        "examples": [
+          0
+        ]
+      },
+      "Total Cost": {
+        "$id": "#/items/properties/Total Cost",
+        "type": "number",
+        "title": "The Total cost Schema",
+        "default": 0.0,
+        "examples": [
+          1.2514
+        ]
+      },
+      "ROI": {
+        "$id": "#/items/properties/ROI",
+        "type": "string",
+        "title": "The Roi Schema",
+        "default": "",
+        "examples": [
+          "N/A"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "ARPU": {
+        "$id": "#/items/properties/ARPU",
+        "type": "integer",
+        "title": "The Arpu Schema",
+        "default": 0,
+        "examples": [
+          0
+        ]
+      },
+      "Average eCPI": {
+        "$id": "#/items/properties/Average eCPI",
+        "type": "number",
+        "title": "The Average ecpi Schema",
+        "default": 0.0,
+        "examples": [
+          0.6257
+        ]
+      },
+      "af_content_view (Unique users)": {
+        "$id": "#/items/properties/af_content_view (Unique users)",
+        "type": "integer",
+        "title": "The Af_content_view (unique users) Schema",
+        "default": 0,
+        "examples": [
+          0
+        ]
+      },
+      "af_content_view (Event counter)": {
+        "$id": "#/items/properties/af_content_view (Event counter)",
+        "type": "integer",
+        "title": "The Af_content_view (event counter) Schema",
+        "default": 0,
+        "examples": [
+          0
+        ]
+      },
+      "af_content_view (Sales in USD)": {
+        "$id": "#/items/properties/af_content_view (Sales in USD)",
+        "type": "integer",
+        "title": "The Af_content_view (sales in usd) Schema",
+        "default": 0,
+        "examples": [
+          0
+        ]
+      },
+      "app_confirmed_sms (Unique users)": {
+        "$id": "#/items/properties/app_confirmed_sms (Unique users)",
+        "type": "integer",
+        "title": "The App_confirmed_sms (unique users) Schema",
+        "default": 0,
+        "examples": [
+          1
+        ]
+      },
+      "app_confirmed_sms (Event counter)": {
+        "$id": "#/items/properties/app_confirmed_sms (Event counter)",
+        "type": "integer",
+        "title": "The App_confirmed_sms (event counter) Schema",
+        "default": 0,
+        "examples": [
+          1
+        ]
+      },
+      "app_confirmed_sms (Sales in USD)": {
+        "$id": "#/items/properties/app_confirmed_sms (Sales in USD)",
+        "type": "integer",
+        "title": "The App_confirmed_sms (sales in usd) Schema",
+        "default": 0,
+        "examples": [
+          0
+        ]
+      },
+      "app_facial_image (Unique users)": {
+        "$id": "#/items/properties/app_facial_image (Unique users)",
+        "type": "integer",
+        "title": "The App_facial_image (unique users) Schema",
+        "default": 0,
+        "examples": [
+          0
+        ]
+      },
+      "app_facial_image (Event counter)": {
+        "$id": "#/items/properties/app_facial_image (Event counter)",
+        "type": "integer",
+        "title": "The App_facial_image (event counter) Schema",
+        "default": 0,
+        "examples": [
+          0
+        ]
+      },
+      "app_facial_image (Sales in USD)": {
+        "$id": "#/items/properties/app_facial_image (Sales in USD)",
+        "type": "integer",
+        "title": "The App_facial_image (sales in usd) Schema",
+        "default": 0,
+        "examples": [
+          0
+        ]
+      },
+      "app_loginpage (Unique users)": {
+        "$id": "#/items/properties/app_loginpage (Unique users)",
+        "type": "integer",
+        "title": "The App_loginpage (unique users) Schema",
+        "default": 0,
+        "examples": [
+          1
+        ]
+      },
+      "app_loginpage (Event counter)": {
+        "$id": "#/items/properties/app_loginpage (Event counter)",
+        "type": "integer",
+        "title": "The App_loginpage (event counter) Schema",
+        "default": 0,
+        "examples": [
+          1
+        ]
+      },
+      "app_loginpage (Sales in USD)": {
+        "$id": "#/items/properties/app_loginpage (Sales in USD)",
+        "type": "integer",
+        "title": "The App_loginpage (sales in usd) Schema",
+        "default": 0,
+        "examples": [
+          0
+        ]
+      },
+      "app_onboard_success (Unique users)": {
+        "$id": "#/items/properties/app_onboard_success (Unique users)",
+        "type": "integer",
+        "title": "The App_onboard_success (unique users) Schema",
+        "default": 0,
+        "examples": [
+          1
+        ]
+      },
+      "app_onboard_success (Event counter)": {
+        "$id": "#/items/properties/app_onboard_success (Event counter)",
+        "type": "integer",
+        "title": "The App_onboard_success (event counter) Schema",
+        "default": 0,
+        "examples": [
+          2
+        ]
+      },
+      "app_onboard_success (Sales in USD)": {
+        "$id": "#/items/properties/app_onboard_success (Sales in USD)",
+        "type": "integer",
+        "title": "The App_onboard_success (sales in usd) Schema",
+        "default": 0,
+        "examples": [
+          0
+        ]
+      },
+      "app_open (Unique users)": {
+        "$id": "#/items/properties/app_open (Unique users)",
+        "type": "integer",
+        "title": "The App_open (unique users) Schema",
+        "default": 0,
+        "examples": [
+          2
+        ]
+      },
+      "app_open (Event counter)": {
+        "$id": "#/items/properties/app_open (Event counter)",
+        "type": "integer",
+        "title": "The App_open (event counter) Schema",
+        "default": 0,
+        "examples": [
+          3
+        ]
+      },
+      "app_open (Sales in USD)": {
+        "$id": "#/items/properties/app_open (Sales in USD)",
+        "type": "integer",
+        "title": "The App_open (sales in usd) Schema",
+        "default": 0,
+        "examples": [
+          0
+        ]
+      },
+      "app_passcode_1 (Unique users)": {
+        "$id": "#/items/properties/app_passcode_1 (Unique users)",
+        "type": "integer",
+        "title": "The App_passcode_1 (unique users) Schema",
+        "default": 0,
+        "examples": [
+          0
+        ]
+      },
+      "app_passcode_1 (Event counter)": {
+        "$id": "#/items/properties/app_passcode_1 (Event counter)",
+        "type": "integer",
+        "title": "The App_passcode_1 (event counter) Schema",
+        "default": 0,
+        "examples": [
+          0
+        ]
+      },
+      "app_passcode_1 (Sales in USD)": {
+        "$id": "#/items/properties/app_passcode_1 (Sales in USD)",
+        "type": "integer",
+        "title": "The App_passcode_1 (sales in usd) Schema",
+        "default": 0,
+        "examples": [
+          0
+        ]
+      },
+      "app_passcode_2 (Unique users)": {
+        "$id": "#/items/properties/app_passcode_2 (Unique users)",
+        "type": "integer",
+        "title": "The App_passcode_2 (unique users) Schema",
+        "default": 0,
+        "examples": [
+          0
+        ]
+      },
+      "app_passcode_2 (Event counter)": {
+        "$id": "#/items/properties/app_passcode_2 (Event counter)",
+        "type": "integer",
+        "title": "The App_passcode_2 (event counter) Schema",
+        "default": 0,
+        "examples": [
+          0
+        ]
+      },
+      "app_passcode_2 (Sales in USD)": {
+        "$id": "#/items/properties/app_passcode_2 (Sales in USD)",
+        "type": "integer",
+        "title": "The App_passcode_2 (sales in usd) Schema",
+        "default": 0,
+        "examples": [
+          0
+        ]
+      },
+      "app_phone_number_add (Unique users)": {
+        "$id": "#/items/properties/app_phone_number_add (Unique users)",
+        "type": "integer",
+        "title": "The App_phone_number_add (unique users) Schema",
+        "default": 0,
+        "examples": [
+          1
+        ]
+      },
+      "app_phone_number_add (Event counter)": {
+        "$id": "#/items/properties/app_phone_number_add (Event counter)",
+        "type": "integer",
+        "title": "The App_phone_number_add (event counter) Schema",
+        "default": 0,
+        "examples": [
+          1
+        ]
+      },
+      "app_phone_number_add (Sales in USD)": {
+        "$id": "#/items/properties/app_phone_number_add (Sales in USD)",
+        "type": "integer",
+        "title": "The App_phone_number_add (sales in usd) Schema",
+        "default": 0,
+        "examples": [
+          0
+        ]
+      },
+      "app_registered_success (Unique users)": {
+        "$id": "#/items/properties/app_registered_success (Unique users)",
+        "type": "integer",
+        "title": "The App_registered_success (unique users) Schema",
+        "default": 0,
+        "examples": [
+          0
+        ]
+      },
+      "app_registered_success (Event counter)": {
+        "$id": "#/items/properties/app_registered_success (Event counter)",
+        "type": "integer",
+        "title": "The App_registered_success (event counter) Schema",
+        "default": 0,
+        "examples": [
+          0
+        ]
+      },
+      "app_registered_success (Sales in USD)": {
+        "$id": "#/items/properties/app_registered_success (Sales in USD)",
+        "type": "integer",
+        "title": "The App_registered_success (sales in usd) Schema",
+        "default": 0,
+        "examples": [
+          0
+        ]
+      },
+      "app_waiting_sms_code (Unique users)": {
+        "$id": "#/items/properties/app_waiting_sms_code (Unique users)",
+        "type": "integer",
+        "title": "The App_waiting_sms_code (unique users) Schema",
+        "default": 0,
+        "examples": [
+          1
+        ]
+      },
+      "app_waiting_sms_code (Event counter)": {
+        "$id": "#/items/properties/app_waiting_sms_code (Event counter)",
+        "type": "integer",
+        "title": "The App_waiting_sms_code (event counter) Schema",
+        "default": 0,
+        "examples": [
+          1
+        ]
+      },
+      "app_waiting_sms_code (Sales in USD)": {
+        "$id": "#/items/properties/app_waiting_sms_code (Sales in USD)",
+        "type": "integer",
+        "title": "The App_waiting_sms_code (sales in usd) Schema",
+        "default": 0,
+        "examples": [
+          0
+        ]
+      },
+      "emotion_validation (Unique users)": {
+        "$id": "#/items/properties/emotion_validation (Unique users)",
+        "type": "integer",
+        "title": "The Emotion_validation (unique users) Schema",
+        "default": 0,
+        "examples": [
+          0
+        ]
+      },
+      "emotion_validation (Event counter)": {
+        "$id": "#/items/properties/emotion_validation (Event counter)",
+        "type": "integer",
+        "title": "The Emotion_validation (event counter) Schema",
+        "default": 0,
+        "examples": [
+          0
+        ]
+      },
+      "emotion_validation (Sales in USD)": {
+        "$id": "#/items/properties/emotion_validation (Sales in USD)",
+        "type": "integer",
+        "title": "The Emotion_validation (sales in usd) Schema",
+        "default": 0,
+        "examples": [
+          0
+        ]
+      }
+    }
+  }
+}

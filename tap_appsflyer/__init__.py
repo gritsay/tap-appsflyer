@@ -31,7 +31,8 @@ STATE = {}
 
 ENDPOINTS = {
     "installs": "/export/{app_id}/installs_report/v5",
-    "in_app_events": "/export/{app_id}/in_app_events_report/v5"
+    "in_app_events": "/export/{app_id}/in_app_events_report/v5",
+    "partners": "/export/{app_id}/partners_report/v5"
 }
 
 
@@ -50,6 +51,10 @@ def get_start(key):
 
 
 def get_stop(start_datetime, stop_time, days=30):
+
+    if "end_date" in CONFIG:
+        return  utils.strptime(CONFIG["end_date"])
+
     return min(start_datetime + datetime.timedelta(days=days), stop_time)
 
 
@@ -159,6 +164,96 @@ class RequestToCsvAdapter:
 
     def __next__(self):
         return next(self.request_data_iter).decode("utf-8")
+
+def sync_parthners():
+    schema = load_schema("raw_data/parthners")
+    singer.write_schema("partners_report", schema, [])
+    fieldnames = (
+        "agency_pmd_af_prt",
+        "media_source_pid",
+        "campaign",
+        "impressions",
+        "clicks",
+        "ctr",
+        "installs",
+        "conversion_rate",
+        "sessions",
+        "loyal_users",
+        "loyal_users_Installs",
+        "total_revenue",
+        "total_cost",
+        "roi",
+        "arpu",
+        "average_ecpi",
+        "af_content_view_unique_users",
+        "af_content_view_event_counter",
+        "af_content_view_sales_in_usd",
+        "app_confirmed_sms_unique_users",
+        "app_confirmed_sms_event_counter",
+        "app_confirmed_sms_sales_in_usd",
+        "app_facial_image_unique_users",
+        "app_facial_image_event_counter",
+        "app_facial_image_sales_in_usd",
+        "app_loginpage_unique_users",
+        "app_loginpage_event_counter",
+        "app_loginpage_sales_in_usd",
+        "app_onboard_success_unique_users",
+        "app_onboard_success_event_counter",
+        "app_onboard_success_sales_in_usd",
+        "app_open_unique_users",
+        "app_open_event_counter",
+        "app_open_sales_in_usd",
+        "app_passcode_1_unique_users",
+        "app_passcode_1_event_counter",
+        "app_passcode_1_sales_in_usd",
+        "app_passcode_2_unique_users",
+        "app_passcode_2_event_counter",
+        "app_passcode_2_sales_in_usd",
+        "app_phone_number_add_unique_users",
+        "app_phone_number_add_event_counter",
+        "app_phone_number_add_sales_in_usd",
+        "app_registered_success_unique_users",
+        "app_registered_success_event_counter",
+        "app_registered_success_sales_in_usd",
+        "app_waiting_sms_code_unique_users",
+        "app_waiting_sms_code_event_counter",
+        "app_waiting_sms_code_sales_in_usd",
+        "emotion_validation_unique_users",
+        "emotion_validation_event_counter",
+        "emotion_validation_sales_in_usd"
+    )
+
+    from_datetime = get_start("partners")
+    to_datetime = get_stop(from_datetime, datetime.datetime.now())
+
+    if to_datetime < from_datetime:
+        LOGGER.error("to_datetime (%s) is less than from_endtime (%s).", to_datetime, from_datetime)
+        return
+
+    params = dict()
+    params["from"] = from_datetime.strftime("%Y-%m-%d %H:%M")
+    params["to"] = to_datetime.strftime("%Y-%m-%d %H:%M")
+    params["api_token"] = CONFIG["api_token"]
+
+    url = get_url("partners", app_id=CONFIG["app_id"])
+    request_data = request(url, params)
+
+    csv_data = RequestToCsvAdapter(request_data)
+    reader = csv.DictReader(csv_data, fieldnames)
+
+    next(reader)  # Skip the heading row
+
+    bookmark = from_datetime
+    for i, row in enumerate(reader):
+        record = xform(row, schema)
+        singer.write_record("parthners", record)
+        # AppsFlyer returns records in order of most recent first.
+        if utils.strptime(record["attributed_touch_time"]) > bookmark:
+            bookmark = utils.strptime(record["attributed_touch_time"])
+
+    # Write out state
+    utils.update_state(STATE, "parthners", bookmark)
+    singer.write_state(STATE)
 
 
 def sync_installs():
@@ -419,8 +514,9 @@ def sync_in_app_events():
 
 
 STREAMS = [
-    Stream("installs", sync_installs),
+    #Stream("installs", sync_installs),
     Stream("in_app_events", sync_in_app_events)
+    #Stream("parthners", sync_parthners)
 ]
 
 
